@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    char t,A[]="Ritika";
+    char t,A[]="RITIKA";
     int i=0,n,j;
    // printf("Enter the string\n");
     scanf("%s",A);
