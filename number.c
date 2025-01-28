@@ -1,24 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    int i,j,n,k,l;
+    int n;
     printf("Enter the number:");
     scanf("%d",&n);
-    for(i=0;i<=n;i++)
+    if(n>0)
     {
-        for(j=1;j<=n-i;j++)
-        {
-            printf(" ");
-        }
-        for(k=1;k<=i;k++)
-        {
-            printf("%d",k);
-        }
-        for(l=i-1;l>=1;l--)
-        {
-            printf("%d",l);
-        }
-        printf("\n");
+        printf("the number is positive");
+    }
+    else if(n<=0)
+    {
+        printf("the number is negative");
+    }
+    else
+    {
+        printf("the number is zer0");
     }
     return 0;
 }
