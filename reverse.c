@@ -1,26 +1,24 @@
 #include<stdio.h>
+#include<string.h>
+int rev(char A[],int i, int j)
+{
+    if(i>=j)
+    {
+        return 0;
+    }
+    char t=A[i];
+    A[i]=A[j];
+    A[j]=t;
+    rev(A,i+1,j-1);
+}
 int main()
 {
-    char t,A[10]="RITIKA";
-    int i=0,j,n;
-    for(i=0;i<n;i++)
-    
-    while(A[j]!='\0')
-    {
-        j++;
-    }
-    n=j;
-
-    i=0;
-    j=n-1;
-    while(i<j)
-    {
-        t=A[i];
-        A[i]=A[j];
-        A[j]=t;
-        i++;
-        j--;
-    }
-    printf("the reverse of string is=%s",A);
+    char A[100];
+    int l;
+    printf("Enter the string:");
+    scanf("%d",A);
+    l=strlen(A);
+    rev(A,0,l-1);
+    printf("Reverse the string=%s\n",A);
     return 0;
 }
