@@ -1,24 +1,34 @@
-#include<stdio.h>
-#include<string.h>
-int rev(char A[],int i, int j)
+#include <stdio.h>
+
+void reverse(int arr[], int n) 
 {
-    if(i>=j)
+    int start = 0;
+    int end = n - 1;
+    while (start < end) 
     {
-        return 0;
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        
+        start++;
+        end--;
     }
-    char t=A[i];
-    A[i]=A[j];
-    A[j]=t;
-    rev(A,i+1,j-1);
 }
-int main()
-{
-    char A[100];
-    int l;
-    printf("Enter the string:");
-    scanf("%d",A);
-    l=strlen(A);
-    rev(A,0,l-1);
-    printf("Reverse the string=%s\n",A);
+
+int main() {
+    int arr[5] = {5, 10, 7, 9, 5};
+    int n =sizeof(arr) / sizeof(arr[0]);
+    printf("Original array: ");
+    for(int i = 0; i < 5; i++) 
+    {
+       printf("%d\n", arr[i]);
+    }
+    reverse(arr, n);
+    printf("Reversed array: ");
+    for(int i = 0; i < 5; i++)
+    {
+        printf("%d\n ", arr[i]);
+    }
+   
     return 0;
 }
