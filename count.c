@@ -1,28 +1,19 @@
 #include<stdio.h>
-int countD(int n)
+int count(int n)
 {
-    if(n==0)
+    int count=0;
+    while(n>0)
     {
-        return 0;
+        count=count+(n&1);
+        n=n>>1;
     }
-    else
-    {
-        return 1+countD(n/10);
-    }
+    return count;
 }
 int main()
 {
-    int n,r;
-    printf("Enter the numbers");
+    int n;
+    printf("Enter the number:");
     scanf("%d",&n);
-    if(n==0)
-    {
-        printf("numbers of digit:");
-    }
-    else
-    {
-        r=countD(n);
-        printf("number of digit=%d\n",r);
-    }
+    printf("No. of bits=%d\n",count(n));
     return 0;
 }
